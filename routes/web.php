@@ -20,10 +20,21 @@ Route::get('/tasks', function ()  {
 }) ->name('task.index');
 
 
+
+Route::view('/tasks/create', 'create')
+    ->name('task.create');
+
+
 Route::get('/tasks/{id}', function ($id)  {
     return view('show', ['task' => \App\Models\Task::findOrFail($id)]);
 
 })  ->name('task.show');
+
+
+Route::post('/tasks', function(){
+    dd('We have reached the store route');
+}) ->name('task.store');
+
 
 // Route::get('/halo',function () {
 //     return redirect()->route('hello');
