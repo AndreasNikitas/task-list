@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Route::get('/tasks', function ()  {
     return view('index', [
-       'tasks' => Task::latest()->get()
+       'tasks' => Task::latest()->paginate(10)
     ]);
 }) ->name('task.index');
 
@@ -76,6 +76,16 @@ $task->update($request->validated());
     ->with('success', 'Task updated successfully');
 
 }) ->name('task.update');
+
+
+Route::delete('/tasks/{task}', function(Task $task) {
+
+    $task->delete();
+
+    return redirect()->route('task.index')
+    ->with('success', 'Task deleted successfully');
+
+}) ->name('task.destroy');
 
 
 // Route::get('/halo',function () {

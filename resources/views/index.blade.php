@@ -13,4 +13,12 @@
         @endforelse
     {{-- @endif --}}
 
+@if($tasks->count())
+
+<nav>
+    {{$tasks->links()}}
+</nav>
+
+@endif
+
 @endsection

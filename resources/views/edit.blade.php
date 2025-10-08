@@ -1,4 +1,24 @@
+
+
 @extends('layouts.app')
+
+@section('content')
+
+    @include('form', ['task' => $task])
+
+@endsection
+
+
+
+
+
+
+
+
+{{-- Old Code Before form.blade.php --}}
+
+
+{{-- @extends('layouts.app')
 
 @section('title', 'Edit Task')
 
@@ -12,9 +32,9 @@
 
 @endsection
 
-@section('content')
+@section('content') --}}
 {{-- {{$errors}} --}}
-<form method="POST" action="{{route('task.update', ['task' => $task->id])}}">
+{{-- <form method="POST" action="{{route('task.update', ['task' => $task->id])}}">
 @csrf
 @method('PUT')
     <div>
@@ -52,4 +72,4 @@
 
 @endsection
 
-
+ --}}

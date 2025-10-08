@@ -1,6 +1,23 @@
+
 @extends('layouts.app')
 
-@section('title', 'Add Task')
+@section('content')
+
+    @include('form')
+    
+@endsection
+
+
+
+
+
+
+
+{{-- Old Code Before form.blade.php --}}
+
+{{-- @extends('layouts.app') --}}
+
+{{-- @section('title', 'Add Task')
 
 @section('styles')
 <style>
@@ -10,11 +27,11 @@
     }
 </style>
 
-@endsection
+@endsection --}}
 
-@section('content')
+{{-- @section('content') --}}
 {{-- {{$errors}} --}}
-<form method="POST" action="{{route('task.store')}}">
+{{-- <form method="POST" action="{{route('task.store')}}">
 @csrf
 
     <div>
@@ -48,8 +65,8 @@
         <button type="submit">Add Task</button>
     </div>
 
-</form>
+</form> --}}
 
-@endsection
+{{-- @endsection --}}
 
 
